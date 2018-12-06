@@ -1,0 +1,12 @@
+{ "columns":52,
+ "image":"Tilesheet\/groundGrass.png",
+ "imageheight":1024,
+ "imagewidth":832,
+ "margin":0,
+ "name":"groundGrass16_16",
+ "spacing":0,
+ "tilecount":3328,
+ "tileheight":16,
+ "tilewidth":16,
+ "type":"tileset"
+}
