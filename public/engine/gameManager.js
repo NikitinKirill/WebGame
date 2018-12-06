@@ -58,14 +58,14 @@ class gameManager {
 
     }
 
-    loadScene(sc) {
+    loadScene(sc = 0) {
         this.clearScreen();
 
         getMapManager().jsonLoaded = false;
         getMapManager().imagesLoaded = false;
         getMapManager().imgLoadCounter = 0;
         getMapManager().view = {x: 0, y: 0, w: 800, h: 600};
-        getMapManager().loadMap('resource/maps/' + sc.map);
+        getMapManager().loadMap('resource/maps/first_level.json');
         setTimeout(this.loadSceneFinish, 10);
 
     }
@@ -93,7 +93,7 @@ class gameManager {
             //getHudManager().drawHero('endlevel');
             //getHudManager().drawEndLevel();
             //setTimeout( getGameManager().levelCompleted, 20 );
-        }
+        //}
 
    // }
 
@@ -121,7 +121,7 @@ class gameManager {
         return { x, y };
     }
 
-    loadSceneFinish(sc) {
+    loadSceneFinish(sc=0){
         let jobs = 2;
         if( getMapManager().jsonLoaded ) {
             jobs--;
@@ -140,7 +140,7 @@ class gameManager {
 
     // загрузка ресурсов
     loadResources() {
-        getSpriteManager().loadAtlas('resource/images/sprites.png', 'resource/images/sprites.json');
+        getSpriteManager().loadAtlas('resource/images/spritesheet.png', 'resource/images/sprites.json');
         getEventsManager().setup(getCurrentCanvas());
         //getAudioManager().init();
         //getAudioManager().loadArray([
@@ -167,9 +167,9 @@ class gameManager {
             jobs--;
         }
 
-        if( getAudioManager().loaded ) {
+        /*if( getAudioManager().loaded ) {
             jobs--;
-        }
+        }*/
 
         // Перезагрузка процессов
         if( jobs === 0 ) {
@@ -183,7 +183,6 @@ class gameManager {
     play() {
         this.worldUpdateTimer = setInterval(updateWorld, gameSpeed);
     }
-
 }
 
 function updateWorld() {

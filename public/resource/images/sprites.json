@@ -1,1 +1,4 @@
-[{"name":"Player","x":0,"y":0,"width":21,"height":31}]
+{"frames": [
+  {"name":"Player",
+    "frame": {"x":0,"y":0,"w":21,"h":31}}]
+}

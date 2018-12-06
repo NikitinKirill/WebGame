@@ -22,7 +22,9 @@ html(lang='en')
       button#info.btn-records(onclick='scoreboard(true);') Рекорды
       button#pause.btn-pause(onclick='alert("Пауза")') Пауза
       button#quit.btn-quit(onclick='if( confirm(`Вы дейcтвительно хотите покинуть игру?`) ) {location.reload();}') Выход
-    script(src='engine/mapManager.js')
+    //script(src='engine/mapManager.js')
+    //script(src='engine/spriteManager.js')
+    //script(src='engine/gameManager.js')
     script.
         let canvas = document.getElementById('canvas');
         var context = canvas.getContext('2d');
@@ -36,28 +38,33 @@ html(lang='en')
         // context.lineWidth = 10;
         // context.stroke();
         context.fillStyle = "#9ea7b8"
-        var map  = new mapManager();
-        map.loadMap("resource/maps/first_level.json");
-        map.draw(context);
-        context.strokeRect(50, 50, 10, 10);
-        context.moveTo(0, 0);
-        context.lineTo(canvas.width, canvas.height);
-        context.moveTo(canvas.width, 0);
-        context.lineTo(0, canvas.height);
-        context.strokeStyle = 'black';
-        context.lineWidth = 10;
-        context.stroke();
-        map.draw(context);
-    //script(src='engine/mapManager.js')
-    //script(src='engine/spriteManager.js')
-    //script(src='engine/eventsManager.js')
-    //script(src='engine/gameManager.js')
-    //script(src='engine/physicManager.js')
+        // var map  = new mapManager();
+        // var sprite = new spriteManager();
+        // var game  = new gameManager();
+        // function getGameManager() { return game; }
+        // map.loadMap("resource/maps/first_level.json");
+        // sprite.loadAtlas("resource/images/sprites.json", "resource/images/spritesheet.png")
+        // map.parseEntities();
+        // map.draw(context);
+        // context.strokeRect(50, 50, 10, 10);
+        // context.moveTo(0, 0);
+        // context.lineTo(canvas.width, canvas.height);
+        // context.moveTo(canvas.width, 0);
+        // context.lineTo(0, canvas.height);
+        // context.strokeStyle = 'black';
+        // context.lineWidth = 10;
+        // context.stroke();
+        // map.draw(context);
+    script(src='engine/mapManager.js')
+    script(src='engine/spriteManager.js')
+    script(src='engine/eventsManager.js')
+    script(src='engine/gameManager.js')
+    script(src='engine/physicManager.js')
     //script(src='engine/spin.js')
     //script(src='engine/hudManager.js')
     //script(src='engine/scoreManager.js')
     //script(src='engine/audioManager.js')
-    //script(src='engine/entity.js')
+    script(src='engine/entity.js')
     //script(src='resource/mapsDescription.js')
     //script(src='resource/entities/player.js')
     //script(src='resource/entities/trigger.js')
@@ -66,5 +73,5 @@ html(lang='en')
     //script(src='resource/entities/testBullet.js')
     //script(src='resource/entities/enemy.js')
     //script(src='resource/entities/enemyBody.js')
-    script(src='settings.js')
+    script(src='settings1.js')
     //block content

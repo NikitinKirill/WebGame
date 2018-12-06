@@ -8,5 +8,6 @@ class player extends Entity{
         this.speed = 5;
     }
     draw(){
+        getSpriteManager().drawSprite(context, 'Player', this.x, this.y);
     }
 }

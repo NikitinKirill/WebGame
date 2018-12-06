@@ -130,7 +130,7 @@ class mapManager {
     }
 
     // разбор слоя objectgroups
-    /*parseEntities() {
+    parseEntities() {
         if(!this.imagesLoaded || !this.jsonLoaded) {
             return false;
 
@@ -181,7 +181,7 @@ class mapManager {
                 }
             }
         }
-    }*/
+    }
 
     // камера
     centerAt(x, y) {

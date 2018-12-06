@@ -1,7 +1,7 @@
 var levelBriefDuration = 8000;
 var gameSpeed = 20;
 var name;
-//var map  = new mapManager();
+var map  = new mapManager();
 var sprite  = new spriteManager();
 var events  = new eventsManager();
 var physic  = new physicManager();
@@ -27,7 +27,7 @@ function completedLevel(l) {
 
 function startLevel(lvl) {
 
-    var ctx = getCurrentContext(),
+   /* var ctx = getCurrentContext(),
         pic = new Image();
     pic.src = gameScenes[lvl].img;
     pic.onload = function () {
@@ -36,6 +36,12 @@ function startLevel(lvl) {
 
     setTimeout( () => {
         getGameManager().loadScene(gameScenes[lvl]);
+    }, levelBriefDuration);*/
+
+
+
+    setTimeout( () => {
+        getGameManager().loadScene();
     }, levelBriefDuration);
 
 }
@@ -79,7 +85,9 @@ function launch() {
     name = document.getElementById("name").value;
     console.log(name);
     document.getElementById('overlay').style.display = 'none';
+    document.getElementById('info').style.display = 'block';
     document.getElementById('pause').style.display = 'block';
     document.getElementById('quit').style.display = 'block';
 }
+
 
